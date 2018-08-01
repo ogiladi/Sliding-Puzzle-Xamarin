@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Puzzle.InfoPage"
+             NavigationPage.BackButtonTitle="Back"
+             Title="About This App">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image Source="hex_background.png"                    
+                   Aspect="AspectFill"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToParent,
+                        Property=Width,
+                        Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression
+                        Type=RelativeToParent,
+                        Property=Height,
+                        Factor=1}"/>  
+            <Grid 
+                Style="{StaticResource GridSpacing}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Width,
+                    Factor=1}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Height,
+                    Factor=1}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="Developer's Website"
+                    Clicked="GoToWebsite"/>
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="Code On GitHub"
+                    Clicked="GoToGitHub"/>
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="About App Icons"
+                    Clicked="AboutIcons"/>
+                <Button
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="About Background Image"
+                    Clicked="AboutBackground"/>   
+            </Grid>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

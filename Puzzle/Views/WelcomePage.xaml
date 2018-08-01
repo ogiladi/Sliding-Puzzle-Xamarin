@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Puzzle.WelcomePage"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="Silver">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image Source="hex_background.png" 
+                   Opacity="0.1"
+                   Aspect="AspectFill"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToParent,
+                        Property=Width,
+                        Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression
+                        Type=RelativeToParent,
+                        Property=Height,
+                        Factor=1}"/>  
+            <Grid
+                Style="{StaticResource GridSpacing}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                  Type=RelativeToParent,
+                  Property=Width,
+                  Factor=1}"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression
+                  Type=RelativeToParent,
+                  Property=Height,
+                  Factor=1}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <AbsoluteLayout
+                    x:Name="upperLayout"
+                    Grid.Row="0"
+                    Grid.Column="0">                                            
+                </AbsoluteLayout>
+                <StackLayout                    
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalOptions="Center"
+                    Orientation="Vertical">
+                    <Label 
+                        x:Name="titleLabel"
+                        Text="Sliding Puzzle"
+                        Style="{StaticResource TitleStyle}"/>
+                    <Label                                                 
+                        Style="{StaticResource SubTitleStyle}"
+                        Text="Choose Board Size"/>                      
+                    <StackLayout                                                
+                        Orientation="Horizontal"                       
+                        HorizontalOptions="CenterAndExpand">
+                        <Button   
+                            WidthRequest="{StaticResource ButtonWidth}"
+                            Style="{StaticResource ButtonStyle}"
+                            Text="3x3"
+                            Clicked="StartGameAsync"/>   
+                        <Button                                   
+                            WidthRequest="{StaticResource ButtonWidth}"
+                            Style="{StaticResource ButtonStyle}"
+                            Text="4x4"
+                            Clicked="StartGameAsync"/>
+                        <Button                                   
+                            WidthRequest="{StaticResource ButtonWidth}"
+                            Style="{StaticResource ButtonStyle}"
+                            Text="5x5"
+                            Clicked="StartGameAsync"/>
+                        <Button              
+                            WidthRequest="{StaticResource ButtonWidth}"
+                            Style="{StaticResource ButtonStyle}"
+                            Text="6x6"
+                            Clicked="StartGameAsync"/>
+                    </StackLayout> 
+                </StackLayout>                
+            </Grid>            
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
